@@ -8,4 +8,7 @@ class Persistence():
     
     def get_all_users(self):
         return os.listdir('./persistence')
-            
+    
+    def get_user(self, name):
+        with open(f'./persistence/{name}.json', 'r') as file:
+            return json.load(file)

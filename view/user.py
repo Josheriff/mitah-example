@@ -5,3 +5,6 @@ class UserView():
 
     def register(self):
         return self.user_controller.register()
+    
+    def login(self):
+        return self.user_controller.login()

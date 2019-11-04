@@ -14,7 +14,7 @@ class User():
         password = self._ask_for_password()        
         self._save_user({'name':name, 'password':password})
     
-    def loging(self):
+    def login(self):
         name = input('introduce tu nombre de usuario')
         password = input('introduce tu contraseña')
         self._check_user_password(name, password)
@@ -22,7 +22,7 @@ class User():
     
     def _check_user_password(self, name, password):
         user = self.persistence.get_user(name)
-        if user[password] == password:
+        if user['password'] == password:
             return True
         raise IncorrectPassword
     
