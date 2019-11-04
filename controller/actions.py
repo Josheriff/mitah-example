@@ -4,3 +4,6 @@ class ActionController():
         
     def begin(self):
         return self.action_model.begin()
+    
+    def ask_accept(self, user):
+        return self.action_model.ask_accept(user)

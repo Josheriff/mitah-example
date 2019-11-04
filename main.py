@@ -8,7 +8,7 @@ from model.actions import Action
 
 persistence_model = Persistence()
 persistence = PersistenceController(persistence_model)
-actions_model = Action()
+actions_model = Action(persistence)
 actions_controller = ActionController(actions_model)
 user_model = User(persistence, actions_controller)
 user_controller = UserController(user_model)

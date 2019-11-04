@@ -5,3 +5,5 @@ class PersistenceController():
         return self.persistence_model.save_user(user)
     def get_user(self, name):
         return self.persistence_model.get_user(name)
+    def add_friend(self, user, name):
+        return self.persistence_model.add_friend(user, name)

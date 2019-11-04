@@ -15,15 +15,17 @@ class User():
         self._save_user({'name':name, 'password':password})
     
     def login(self):
-        name = input('introduce tu nombre de usuario')
-        password = input('introduce tu contraseña')
-        self._check_user_password(name, password)
+        name = input('introduce tu nombre de usuario  ')
+        password = input('introduce tu contraseña  ')
+        user = self._check_user_password(name, password)
+        if user['friend_request']:
+            self.actions.ask_accept(user)
         self.actions.begin()
     
     def _check_user_password(self, name, password):
         user = self.persistence.get_user(name)
         if user['password'] == password:
-            return True
+            return user
         raise IncorrectPassword
     
     def _ask_for_name(self):

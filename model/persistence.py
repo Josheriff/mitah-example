@@ -12,3 +12,10 @@ class Persistence():
     def get_user(self, name):
         with open(f'./persistence/{name}.json', 'r') as file:
             return json.load(file)
+        
+    def add_friend(self, user, name):
+        user_name = user['name']
+        with open(f'./persistence/{user_name}.json', 'w') as file:
+            user['friends'].append(name)
+            user['friend_request'].remove(name)
+            file.write(user)
