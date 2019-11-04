@@ -20,7 +20,7 @@ class User():
         user = self._check_user_password(name, password)
         if user['friend_request']:
             self.actions.ask_accept(user)
-        self.actions.begin()
+        # self.actions.begin()
     
     def _check_user_password(self, name, password):
         user = self.persistence.get_user(name)

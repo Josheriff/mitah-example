@@ -18,4 +18,4 @@ class Persistence():
         with open(f'./persistence/{user_name}.json', 'w') as file:
             user['friends'].append(name)
             user['friend_request'].remove(name)
-            file.write(user)
+            json.dump(user, file)

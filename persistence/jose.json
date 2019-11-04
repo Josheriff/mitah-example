@@ -1,1 +1,1 @@
-{"name": "jose", "password": "12345678", "friend_request":["silvia", "gonzalo"], "friends":[]}
+{"name": "jose", "password": "12345678", "friend_request": [], "friends": ["gonzalo", "alberto", "silvia"]}

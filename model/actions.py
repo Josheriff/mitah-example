@@ -6,7 +6,8 @@ class Action():
         print(' LOGUEADO CORRECTAMENTE ESTAS SON TUS OPCIONES')
     
     def ask_accept(self, user):
-        for name in user['friend_request']:
+        names = user['friend_request'][:] # copiar para evitar paso por referencia
+        for name in names:
             friendship = input(f'¿Quieres aceptar a {name} como amigo?')
             if friendship.upper() == 'S':
                 self.persistence_controller.add_friend(user, name)
